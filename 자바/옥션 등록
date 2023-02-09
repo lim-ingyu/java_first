@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>옥션 판매 등록</title>
+	<script src="../js/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="box-container">
+		<div class="head">
+			<div class="head-box">
+					<div class="header-simple">
+						<div></div>
+						<div class="layout-right">
+							<div class="usermsg">
+								<strong>
+									<a href="#">임인규</a>
+								</strong>
+								님
+							</div>
+							<div class="usermenu">
+								<ul>
+									<li>
+										<a href="#">회원가입</a>
+									</li>
+									<li>
+										<a href="#">마이페이지</a>
+									</li>
+									<li>
+										<a href="#">경매</a>
+									</li>
+									<li>
+										<a href="#">판매하기</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						</div>
+					<div class="core-gnb">
+						<div class="gnb-container">
+							<div class="layout-left">
+								<div class="navi-allmenu">
+									<a href="#" class="navi-opener" >
+										<i class="fas fa-bars""></i>
+										<span>전체 카테고리</span>
+										<em class="type-down"></em>
+									</a>
+								</div>	
+								<div class="coreanavi primary">
+									<ul>
+										<li>
+											<a href="#">쿠폰포인트</a>
+										</li>
+										<li>
+											<a href="#">옥션베스트</a>
+										</li>
+										<li>
+											<a href="#">스마일배송</a>
+										</li>
+										<li>
+											<a href="#">스마일클럽</a>
+										</li>
+										<li>
+											<a href="#">스마일클럽비즈</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="layout-right">
+								<div class="coreanavi .navi-latest">
+									<a href="#">
+										<span>최근 본 상품</span>
+										<em class="ico-arrow type-down"></em>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					</div>
+			</div>
+			<div class="head-box2"></div>
+
+		</div>
+
+	</div>
+</body>
+</html>
