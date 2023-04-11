@@ -9,13 +9,13 @@
 <style>
 	/* 1번 제목*/
     .container3{
-       height: 1500px;
+       height: 1300px;
     }
     .container3-box1{
         font-size: 13px; color: #555; margin: 30px 0 50px 0;
     }
     .container3-box1-box{
-        width: 1300px; margin-left: auto; margin-right: auto;
+        width: 1000px; margin-left: auto; margin-right: auto;
     }
     .container3-box1-row:first-child {
         padding-left: 20px;
@@ -37,7 +37,7 @@
         clear: both; content: ''; display: block;
     }
     .container3-box2-box{
-        width: 1300px; margin-left: auto; margin-right: auto;
+        width: 1000px; margin-left: auto; margin-right: auto;
     }
     .containerbox2-category, container-box3-category{
         margin-top: 10px !important;
@@ -74,7 +74,7 @@
     }
     /* 3번 물품 정보 */
     .container3-box3-box{
-        width: 1300px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
+        width: 1000px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
     }
     table{
         background-color: transparent;
@@ -118,8 +118,8 @@
     }
     .container3-box3-th, .container3-box3-td
     {
-			padding: 7px 25px; vertical-align: middle; border-bottom: 1px solid #ddd;
-			border-left: 1px solid #ddd; height: 45px;
+		padding: 7px 25px; vertical-align: middle; border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd; height: 45px;
     }
     .container3-box3-list > table{
         width: 100%; border-top: 1px solid #111 !important;
@@ -159,7 +159,7 @@
         font-size: 30px; margin-top: 80px;
     }
     .btn-submit{
-			width: 1300px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
+			width: 1000px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
 	}
 	.btn-blue{
 		background: #114da5; border-radius: 10px; float: right; color: #fff;
@@ -416,6 +416,12 @@
 								</td>
 							</tr>
 							<tr>
+								<td class="container3-box3-th">상품크기</td>
+								<td colspan="2" class="container3-box3-td">
+										<input type="text" class="form-control"  id="size" name="pr_size">
+								</td>
+							</tr>
+							<tr>
 								<td class="container3-box3-th">이미지</td>
                                 <td colspan="3" class="container3-box3-td">
                                     <div id="image" style="">
@@ -449,6 +455,86 @@
 		</div>
 	</form>
 </body>
+<script>
+$('form').submit(function(){
+	let pr_name = $('[name=pr_name]').val();
+	if(pr_name.trim().length  == 0){
+		alert('상품명을 입력하세요.');
+		$('[name=pr_name]').focus();
+		return false;
+	}
+	let pr_intro = $('[name=pr_intro]').val();
+	if(pr_intro.trim().length  == 0){
+		alert('상품소개를 입력하세요.');
+		$('[name=pr_intro]').focus();
+		return false;
+	}
+	let pr_condition = $('[name=pr_condition]').val();
+	if(pr_condition.trim().length  == 0){
+		alert('상품상태를 입력하세요.');
+		$('[name=pr_condition]').focus();
+		return false;
+	}
+	let pr_detail = $('[name=pr_detail]').val();
+	if(pr_detail.trim().length  == 0){
+		alert('상세정보를 입력하세요.');
+		$('[name=pr_detail]').focus();
+		return false;
+	}	
+	let pr_location = $('[name=pr_location]').val();
+	if(pr_location.trim().length  == 0){
+		alert('상품위치를 입력하세요.');
+		$('[name=pr_location]').focus();
+		return false;
+	}
+	let pr_startprice = $('[name=pr_startprice]').val();
+	if(pr_startprice.trim().length  == 0){
+		alert('경매시작가격을 입력하세요.');
+		$('[name=pr_startprice]').focus();
+		return false;
+	}
+	let pr_origin = $('[name=pr_origin]').val();
+	if(pr_origin.trim().length  == 0){
+		alert('원산지를 입력하세요.');
+		$('[name=pr_origin]').focus();
+		return false;
+	}
+	let pr_size = $('[name=pr_size]').val();
+	if(pr_size.trim().length  == 0){
+		alert('상품크기를 입력하세요.');
+		$('[name=pr_size]').focus();
+		return false;
+	}
+	//이미지 게시판에서 이미지가 1개이상 선택이 되어야 전송되도록 유효성 검사 
+	if(iamge.indexOf($('#type').val()) < 0){
+		let images = image.querySelectorAll('[type=file]');
+		for(i = 0; i<images.length; i++){
+			if(images[i].files && images[i].files[0])
+				return true;
+		}
+		alert('이미지를 1개이상 선택하세요.');
+		return false;
+	}
+});
+
+	$('.file-box, .preview').click(function(){
+	    $(this).siblings('input').click();
+	});
+	
+	function readURL(input){
+	    if(!input.files || !input.files[0]){
+	        input.nextElementSibling.src ='';
+	        input.previousElementSibling.style.display = 'block';
+	        return;
+	    }
+	    let reader = new FileReader();
+	    reader.onload = function(e){
+	        input.previousElementSibling.style.display = 'none';
+	        input.nextElementSibling.src = e.target.result;
+	    }
+	    reader.readAsDataURL(input.files[0]);
+	}
+</script>
 
 <script>
 
@@ -512,25 +598,8 @@
     function changeRemove(){
         $('#category4').hide();
     }
-
-    $('.file-box, .preview').click(function(){
-        $(this).siblings('input').click();
-    });
-    
-    function readURL(input){
-        if(!input.files || !input.files[0]){
-            input.nextElementSibling.src ='';
-            input.previousElementSibling.style.display = 'block';
-            return;
-        }
-        let reader = new FileReader();
-        reader.onload = function(e){
-            input.previousElementSibling.style.display = 'none';
-            input.nextElementSibling.src = e.target.result;
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
 </script>
+
 <script>
 function changeFn(){
 	var plc_name  = document.getElementById('category1');
