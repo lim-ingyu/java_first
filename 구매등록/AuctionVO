@@ -1,0 +1,24 @@
+package kr.kh.onAirAuction.vo;
+
+import java.util.Date;
+
+import lombok.Data;
+
+@Data
+public class AuctionVO {
+	
+		int ac_num;
+		int ac_calculation;  
+		Date ac_bidtime;  
+		Date ac_startdate; 
+		Date ac_finaldate; 
+		int ac_extension;
+		int ac_faild;
+		int ac_immediate;
+		int ac_limitlevel;
+		String ac_deliveryway;
+		int ac_pr_code;
+		String ac_me_id;
+		String ac_ac_name;
+		
+}
