@@ -504,17 +504,7 @@ $('form').submit(function(){
 		alert('상품크기를 입력하세요.');
 		$('[name=pr_size]').focus();
 		return false;
-	}
-	//이미지 게시판에서 이미지가 1개이상 선택이 되어야 전송되도록 유효성 검사 
-	if(iamge.indexOf($('#type').val()) < 0){
-		let images = image.querySelectorAll('[type=file]');
-		for(i = 0; i<images.length; i++){
-			if(images[i].files && images[i].files[0])
-				return true;
-		}
-		alert('이미지를 1개이상 선택하세요.');
-		return false;
-	}
+	}s
 });
 
 	$('.file-box, .preview').click(function(){
