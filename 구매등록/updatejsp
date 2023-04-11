@@ -7,11 +7,11 @@
    
 <style>
   	.file-box{
-	width : 100px; height : 200px;
-	border : 1px solid black; font-size : 50px;
-	text-align: center; line-height: 200px; font-weight: bold;
-	border-radius: 5px; 
-	float: left; cursor: pointer;
+		width : 100px; height : 200px;
+		border : 1px solid black; font-size : 50px;
+		text-align: center; line-height: 200px; font-weight: bold;
+		border-radius: 5px; 
+		float: left; cursor: pointer;
 	}
 	#image>div::after{
 		display: block; content: ''; clear: both;
@@ -31,11 +31,12 @@
 		height: 1100px;
 	}
  	.container-box{
- 		width: 1000px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
+ 		width: 800px; margin-left: auto; margin-right: auto; margin-top: 40px !important;
  	}
 	.container-h1{
  		margin-top: 40px; margin-bottom: 30px;
  	}
+
 </style>
 <div class="container">
 	<div class="container-box">
@@ -45,35 +46,51 @@
 		<form action="<c:url value='/product/update/${vo.pr_code}'></c:url>" method="post" enctype="multipart/form-data">
 		    <div class="form-group">
 			    <label for="name">상품명</label>
-			    <input type="text" id="name" name="pr_name" value="${vo.pr_name }" >
+			    <div class="form-control">
+			   		<input type="text" id="name" name="pr_name" value="${vo.pr_name }" style="border:none" >
+			    </div>
 		    </div>
 			<div class="form-group">
 			    <label for="intro">상품소개</label>
-			    <input type="text" id="intro" name="pr_intro" value="${vo.pr_intro }">
+			    <div class="form-control">
+				    <input type="text" id="intro" name="pr_intro" value="${vo.pr_intro }" style="border:none">    
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="condition">상품상태</label>
-			    <input type="text" id="condition" name="pr_condition" value="${vo.pr_condition }">
+			    <div class="form-control">
+				    <input type="text" id="condition" name="pr_condition" value="${vo.pr_condition }" style="border:none">			    
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="detail">상세정보</label>
-			    <input type="text" id="detail" name="pr_detail" value="${vo.pr_detail }">
+			    <div class="form-control">
+				    <input type="text" id="detail" name="pr_detail" value="${vo.pr_detail }" style="border:none">
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="location">상품위치</label>
-			    <input type="text" id="location" name="pr_location" value="${vo.pr_location }">
+			    <div class="form-control">
+				    <input type="text" id="location" name="pr_location" value="${vo.pr_location }" style="border:none">
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="startprice">경매시작가격</label>
-			    <input type="text" id="startprice" name="pr_startprice" value="${vo.pr_startprice }">
+			    <div class="form-control">
+				    <input type="text" id="startprice" name="pr_startprice" value="${vo.pr_startprice }" style="border:none">
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="origin">원산지</label>
-			    <input type="text" id="origin" name="pr_origin"  value="${vo.pr_origin }">
+			    <div class="form-control">
+				    <input type="text" id="origin" name="pr_origin"  value="${vo.pr_origin }" style="border:none">
+			    </div>
 			</div>
 			<div class="form-group">
 			    <label for="price">물품크기</label>
-			    <input type="text" id="size" name="pr_size"  value="${vo.pr_size }">
+			    <div class="form-control">
+				    <input type="text" id="size" name="pr_size"  value="${vo.pr_size }" style="border:none">
+			    </div>
 			</div>
 		   	<div id="image" style="margin-left: 10px">
 				<label>이미지:</label>
